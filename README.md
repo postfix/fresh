@@ -1,14 +1,14 @@
-# fresh
+## fresh
 Fresh: Harden a fresh Debian 11/12 server in one shot: create a key-only admin account, lock down SSH, Ansible, enable UFW + Fail2Ban unattended upgrades—with a single Bash script.
 is a single-file Bash script that transforms a brand-new Debian 11/12 box into a reasonably hardened, key-only environment:
 
-### What it does	Highlights
+#### What it does	Highlights
 ✅ Creates an admin account and adds it to sudo	🔐 Locks the password by default (or generates one on request)
 ✅ Installs OpenSSH, UFW, Fail2Ban, Vim, tmux, Ansible	🚫 Disables root SSH login & password auth
 ✅ Enables unattended security upgrades	🛡️ Applies a minimal sysctl baseline
 ✅ Dry-run (-n) & verbose (-v) modes	📈 Health-check verifies SSH is listening
 
-## Important**
+#### Important
 Before running the script, upload your public SSH key to the server (or place it on attached media).
 Without a key the new admin user cannot log in.
 **Heads-up**  
@@ -21,7 +21,7 @@ sudo ./secure_debian_server.sh -u janis -k /root/admin.pub -p 2222
  ```
 ---
 
-## Requirements
+#### Requirements
 
 * Debian 11 (bullseye) or Debian 12 (bookworm)
 * Root access (`sudo su -` or direct root login for the very first run)
@@ -29,12 +29,12 @@ sudo ./secure_debian_server.sh -u janis -k /root/admin.pub -p 2222
 
 ---
 
-## Quick start
+#### Quick start
 
 1. **Download the script**
 
 ```bash
-wget -O secure_debian_server.sh \
+wget -O debian_server.sh \
 https://raw.githubusercontent.com/<you>/secure-debian-server/main/secure_debian_server.sh
 chmod +x secure_debian_server.sh
 ```
@@ -49,7 +49,7 @@ sudo ./debian_server.sh \
      -k /root/admin.pub \
      -p 2222        # optional SSH port
 ```
- ### Usage
+ #### Usage
  ```bash
 sudo ./debian_server.sh -u <user> -k </path/to/key.pub> [OPTIONS]
 Options:
@@ -62,7 +62,7 @@ Options:
   -v        verbose – echo every command (set -x)
   -h        help
 ```
-### What the script changes
+#### What the script changes
 
 1. **Updates & upgrades** the system.
 2. **Installs** core packages (`openssh-server`, `ufw`, `fail2ban`, `unattended-upgrades`, ...).
@@ -76,14 +76,14 @@ Options:
 
 ---
 
-### Dry run & logging
+#### Dry run & logging
 
 - Add `-n` to see every command without changing the system.
 - All output (colour-stripped) is logged to `/var/log/fresh_debian_server.log`.
 
 ---
 
-### License
+#### License
 
 MIT License – see `LICENSE` file.
 
