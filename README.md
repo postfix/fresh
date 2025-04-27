@@ -35,8 +35,8 @@ sudo ./secure_debian_server.sh -u janis -k /root/admin.pub -p 2222
 
 ```bash
 wget -O debian_server.sh \
-https://raw.githubusercontent.com/<you>/secure-debian-server/main/secure_debian_server.sh
-chmod +x secure_debian_server.sh
+https://raw.githubusercontent.com/postfix/fresh/refs/heads/main/debian_server.sh
+chmod +x debian_server.sh
 ```
 2. **Copy your public key to the server**
 ```bash
