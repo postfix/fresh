@@ -17,7 +17,7 @@ typical workflow is:
 ```bash
 scp ~/.ssh/id_ed25519.pub root@your-server:/root/admin.pub
 ssh root@your-server
-sudo ./secure_debian_server.sh -u janis -k /root/admin.pub -p 2222
+./secure_debian_server.sh -u janis -k /root/admin.pub -p 2222
  ```
 ---
 
@@ -42,16 +42,16 @@ chmod +x debian_server.sh
 ```bash
 scp ~/.ssh/id_ed25519.pub root@server:/root/admin.pub
 ```
-4. **Run It**
+4. **Run It as Root**
 ```bash
-sudo ./debian_server.sh \
+./debian_server.sh \
      -u admin \
      -k /root/admin.pub \
      -p 2222        # optional SSH port
 ```
  #### Usage
  ```bash
-sudo ./debian_server.sh -u <user> -k </path/to/key.pub> [OPTIONS]
+./debian_server.sh -u <user> -k </path/to/key.pub> [OPTIONS]
 Options:
   -u USER   admin account to create / manage   (required)
   -k FILE   path to public SSH key             (required)
